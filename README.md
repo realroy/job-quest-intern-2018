@@ -14,8 +14,18 @@ Code must be writted in Javascript language. The code will be tested with Node8,
 [3, 4, 5, 1, 2]
 ```
 Answer:
-```
--- insert your answer here
+```javascript
+const shift = (arr = [], dir = 'left', num = 0 ) => {
+	if (num > arr.length) throw new Error('Shifting number should be less than array length.')
+	switch(dir) {
+  	case 'left':
+    	return [...arr.slice(num, arr.length), ...arr.slice(0, num)]
+    case 'right':
+    	return [...arr.slice(arr.length - num, arr.length), ...arr.slice(0, arr.length - num)]
+    default:
+    	throw new Error(`Expect direction to be "left" or "right" but received "${dir}".`)
+  }
+}
 ```
 2. Download [hero.json](https://github.com/takemetour/job-quest-intern-2018/blob/master/hero.json) and write a code to caculate these values from **hero.json**
 - 2.1 Average **networth** of all heroes
