@@ -15,17 +15,17 @@ Code must be writted in Javascript language. The code will be tested with Node8,
 ```
 Answer:
 ```javascript
-const shift = (arr = [], dir = 'left', num = 0 ) => {
+const shift = (array = [], direction = 'left', num = 0 ) => {
   if (num > arr.length) throw new Error('Shifting number should be less than array length.')
-    switch(dir) {
-      case 'left':
-        return [...arr.slice(num, arr.length), ...arr.slice(0, num)]
-      case 'right':
-    	return [...arr.slice(arr.length - num, arr.length), ...arr.slice(0, arr.length - num)]
-      default:
-    	throw new Error(`Expect direction to be "left" or "right" but received "${dir}".`)
-    }
+  switch(direction) {
+    case 'left':
+      return [...array.slice(num, array.length), ...array.slice(0, num)]
+    case 'right':
+      return [...array.slice(array.length - num, array.length), ...array.slice(0, array.length - num)]
+    default:
+      throw new Error(`Expect direction to be "left" or "right" but received "${dir}".`)
   }
+}
 ```
 2. Download [hero.json](https://github.com/takemetour/job-quest-intern-2018/blob/master/hero.json) and write a code to caculate these values from **hero.json**
 - 2.1 Average **networth** of all heroes
@@ -34,8 +34,45 @@ const shift = (arr = [], dir = 'left', num = 0 ) => {
 - 2.4 Find the hero who got the worst **kill/death ratio** (ratio = kill/death)
 
 Answer:
-```
--- insert your answer here
+```javascript
+const hero = {
+  json: [
+    /* Suppose this array contained all data from "hero.json".
+    {
+      "name": "Doom",
+      "networth": 76000,
+      "level": 17,
+      "kill": 4,
+      "death": 3,
+      "assist": 3,
+      "primary_attribute": "strength"
+    },
+    ... the rest.
+    */
+  ]
+}
+// helper function that calculate average of entirely array with one specific attribute(key) of object in that array.
+function getAverageWhereAttribute(array = [], attribute = '') {
+	const initialAccumulate = 0
+	const sum = array.reduce((accumulate, each) => accumulate + each[attribute], initialAccumulate)
+  const n = array.length
+  return sum/n
+}
+
+const FIRST_ELEMENT = 0
+
+// 2,1
+const averageNetworth = getAverageWhereAttribute(hero.json, 'networth')
+
+// 2.2
+const intHero = hero.json.filter(hero => hero.primary_attribute === 'intelligent')
+const averageLevelOfIntHero = getAverageWhereAttribute(intHero, 'level')
+
+// 2.3
+const theMostAssistHero = hero.json.sort((a, b) => a.assist > b.assist)[FIRST_ELEMENT]
+
+// 2.4
+const wostKillDeadRatio = hero.json.sort((a, b) => (a.kill / a.death) > (b.kill / b.death) )[FIRST_ELEMENT]
 ```
 
 ## Simple Web Application: A joke from Chuck Norris.
