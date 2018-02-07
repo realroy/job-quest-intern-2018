@@ -95,16 +95,27 @@ This part of quest will be a challenging one. You are going to make a simple web
 ## Questions
 Q1: What is GraphQL and how it is different from REST API?
 
-A1: <insert your answer here>
+A1:
+```
+ New way to query data which provide flexibility to retreive data between Client-Server more than REST API with no added logic for new structure of data. 
+```
 
 
 Q2: Please explain how javascript benefits from cross-platform development
 
-A2: <insert your answer here>
+A2:
+```
+* Developer team don't have to learn serveral languages.
+* Easy to share code and logic across vary platfrom.
+* Easy to maintain code.
+```
 
 Q3: What do you expect to get from during an internship at TakeMeTour?
 
-A3: <insert your answer here>
+A3:
+```
+Dive deep in javascript technology.
+```
 
 ## Submitting
 
