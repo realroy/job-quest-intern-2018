@@ -15,16 +15,28 @@ Code must be writted in Javascript language. The code will be tested with Node8,
 ```
 Answer:
 ```javascript
-const shift = (array = [], direction = 'left', num = 0 ) => {
-  if (num > arr.length) throw new Error('Shifting number should be less than array length.')
+function initStartPoint (arrayLength, direction, num) {
+	if (num < 0 && num >= arrayLength)
+  	throw new Error('Second parameter should >= 0 and < first parameter length!')
   switch(direction) {
-    case 'left':
-      return [...array.slice(num, array.length), ...array.slice(0, num)]
-    case 'right':
-      return [...array.slice(array.length - num, array.length), ...array.slice(0, array.length - num)]
-    default:
-      throw new Error(`Expect direction to be "left" or "right" but received "${dir}".`)
+  	case 'left':	return num
+   	case 'right':	return arrayLength - num
+  	default:		throw new Error('Third parameter should be "left" or "right"!')
   }
+}
+
+function shift (array, direction, num) {
+	if(!Array.isArray(array))
+  	throw new Error('First parameter should be an "Array"!')
+	const arrayLength = array.length
+	let index = initStartPoint(arrayLength, direction, num)
+	const result = []
+	while(true) {
+		if(result.length === arrayLength)
+			return result
+		index = index === arrayLength ? 0 : index
+  	result.push(array[index++])
+	}
 }
 ```
 2. Download [hero.json](https://github.com/takemetour/job-quest-intern-2018/blob/master/hero.json) and write a code to caculate these values from **hero.json**
