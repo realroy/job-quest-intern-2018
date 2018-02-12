@@ -69,7 +69,7 @@ const intHero = hero.json.filter(hero => hero.primary_attribute === 'intelligent
 const averageLevelOfIntHero = getAverageWhereAttribute(intHero, 'level')
 
 // 2.3
-const theMostAssistHero = hero.json.sort((a, b) => a.assist > b.assist)[FIRST_ELEMENT]
+const theMostAssistHero = hero.json.sort((a, b) => a.assist < b.assist)[FIRST_ELEMENT]
 
 // 2.4
 const wostKillDeadRatio = hero.json.sort((a, b) => (a.kill / a.death) > (b.kill / b.death) )[FIRST_ELEMENT]
