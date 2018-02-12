@@ -21,7 +21,7 @@ function initStartPoint (arrayLength, direction, num) {
   switch(direction) {
   	case 'left':	return num
    	case 'right':	return arrayLength - num
-  	default:		throw new Error('Third parameter should be "left" or "right"!')
+  	default:	throw new Error('Third parameter should be "left" or "right"!')
   }
 }
 
@@ -34,7 +34,7 @@ function shift (array, direction, num) {
 	while(true) {
 		if(result.length === arrayLength)
 			return result
-		index = index === arrayLength ? 0 : index
+	index = index === arrayLength ? 0 : index
   	result.push(array[index++])
 	}
 }
@@ -54,8 +54,8 @@ const hero = {
 function getAverageWhereAttribute(array = [], attribute = '') {
 	const initialAccumulate = 0
 	const sum = array.reduce((accumulate, each) => accumulate + each[attribute], initialAccumulate)
-  const n = array.length
-  return sum/n
+	const n = array.length
+	return sum/n
 }
 
 const FIRST_ELEMENT = 0
