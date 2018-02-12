@@ -36,20 +36,7 @@ const shift = (array = [], direction = 'left', num = 0 ) => {
 Answer:
 ```javascript
 const hero = {
-  json: [
-    /* Suppose this array contained all data from "hero.json".
-    {
-      "name": "Doom",
-      "networth": 76000,
-      "level": 17,
-      "kill": 4,
-      "death": 3,
-      "assist": 3,
-      "primary_attribute": "strength"
-    },
-    ... the rest.
-    */
-  ]
+  json: require('./hero.json')
 }
 // helper function that calculate average of entirely array with one specific attribute(key) of object in that array.
 function getAverageWhereAttribute(array = [], attribute = '') {
