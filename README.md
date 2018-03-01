@@ -80,6 +80,8 @@ This part of quest will be a challenging one. You are going to make a simple web
 
 > Chuck Norris once ordered a Big Mac at Burger King, and got one.
 
+[Github repo](https://github.com/realroy/joke-from-chuck-norris)
+
 ### Features
 - Users can get a joke from [Chuck Norris API](http://www.icndb.com/api/)
 - Users has options to change number of result jokes, user's first name and last name
